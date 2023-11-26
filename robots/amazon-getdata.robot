@@ -2,7 +2,7 @@
 Library    OperatingSystem
 Library    Browser
 
-Library    ../py-utils/utils.py
+Library    ../py-utils/py_output_file.py
 
 *** Variables ***
 
@@ -32,3 +32,4 @@ Goto Amazon and store data
     
     Log    ${list_innertext}
     
+    Write List To File    ${list_innertext}    output-data.txt
