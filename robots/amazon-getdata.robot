@@ -32,4 +32,3 @@ Goto Amazon and store data
     
     Log    ${list_innertext}
     
-    Store List In File    output.txt    ${list_innertext}
