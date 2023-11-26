@@ -22,6 +22,9 @@ const appNames = [
   'Appliances',
   'Apps & Games',
   'Audible Audiobooks',
+  'Beauty',
+  'Books',
+  'Grocery & Gourmet Foods',
 ];
 
 const appNames_hin = [
@@ -33,6 +36,7 @@ const appNames_hin = [
   'उपकरण',
   'ऐप और गेम',
   'Audible ऑडियोबुक',
+  'सौंदर्य',
 ];
 
 function compareValues() {
