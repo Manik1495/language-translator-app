@@ -1,9 +1,16 @@
-const A = require('./app_util_v1.js');
-
+const fs = require('fs');
+const app1Data = JSON.parse(fs.readFileSync('data/output-data-en.json'));
+const appNames = Object.values(app1Data);
+console.log(appNames);
+const app2Data = JSON.parse(fs.readFileSync('data/output-data-hin.json'));
+const appNames_hin = Object.values(app2Data);
+console.log(appNames_hin);
+// import readFileLines from './app_util_v1.js';
+// console.log(readFileLines);
 
 const i18next = require('i18next');
 const i18nextXHRBackend = require('i18next-xhr-backend');
-const fs = require('fs');
+// const i18nextHTTPBackend = require('i18next-http-backend');
 
 
 i18next
@@ -18,31 +25,31 @@ i18next
     fallbackLng: 'en',
   });
 
-const appNames = [
-  'Alexa Skills',
-  'Amazon Devices',
-  'Amazon Fashion',
-  'Amazon Fresh',
-  'Amazon Pharmacy',
-  'Appliances',
-  'Apps & Games',
-  'Audible Audiobooks',
-  'Beauty',
-  'Books',
-  'Grocery & Gourmet Foods',
-];
+// const appNames = [
+//   'Alexa Skills',
+//   'Amazon Devices',
+//   'Amazon Fashion',
+//   'Amazon Fresh',
+//   'Amazon Pharmacy',
+//   'Appliances',
+//   'Apps & Games',
+//   'Audible Audiobooks',
+//   'Beauty',
+//   'Books',
+//   'Grocery & Gourmet Foods',
+// ];
 
-const appNames_hin = [
-  'Alexa स्किल',
-  'Amazon डिवाइस',
-  'Amazon फैशन',
-  'Amazon Fresh',
-  'Amazon Pharmacy',
-  'उपकरण',
-  'ऐप और गेम',
-  'Audible ऑडियोबुक',
-  'सौंदर्य',
-];
+// const appNames_hin = [
+//   'Alexa स्किल',
+//   'Amazon डिवाइस',
+//   'Amazon फैशन',
+//   'Amazon Fresh',
+//   'Amazon Pharmacy',
+//   'उपकरण',
+//   'ऐप और गेम',
+//   'Audible ऑडियोबुक',
+//   'सौंदर्य',
+// ];
 
 
 
