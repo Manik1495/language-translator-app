@@ -7,14 +7,26 @@ const appNames_hin = Object.values(app2Data);
 console.log(appNames_hin);
 // import readFileLines from './app_util_v1.js';
 // console.log(readFileLines);
+// import HttpBackend from 'i18next-http-backend';
 
 const i18next = require('i18next');
-const i18nextXHRBackend = require('i18next-xhr-backend');
-// const i18nextHTTPBackend = require('i18next-http-backend');
+const HttpBackend = require('i18next-http-backend');
 
+
+// i18next
+//   .use(HttpBackend)
+//   .init({
+//     debug: true,
+//     backend: {
+//       loadPath: 'locales/{{lng}}/{{ns}}.json',
+//     },
+//     lng: 'en',
+//     ns: ['app_1', 'app_2'],
+//     fallbackLng: 'en',
+//   });
 
 i18next
-  .use(i18nextXHRBackend)
+  .use(HttpBackend)
   .init({
     debug: true,
     backend: {
@@ -23,6 +35,17 @@ i18next
     lng: 'en',
     ns: ['app_1', 'app_2'],
     fallbackLng: 'en',
+  })
+  .then(() => {
+    console.log('i18next initialized successfully.');
+    // Any additional logic can go here
+
+    // Explicitly exit the Node.js process
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error('Error initializing i18next:', error);
+    process.exit(1); // Exit with an error code
   });
 
 // const appNames = [
